@@ -1,0 +1,205 @@
+/* General */
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #d0f0f4; /* Fondo inicial */
+    transition: background 0.5s ease-in-out;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Princesa */
+  .princess-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .princess {
+    position: relative;
+    width: 250px;
+    height: 500px;
+    transform-style: preserve-3d;
+  }
+  
+  /* Cabello */
+  .hair {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 180px;
+    background: #b0452c;
+    border-radius: 110px 110px 0 0;
+    clip-path: ellipse(125px 90px at 50% 50%);
+    z-index: 1;
+  }
+  
+  /* Corona */
+  .crown {
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+  }
+  
+  .spike {
+    width: 30px;
+    height: 50px;
+    background: gold;
+    clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  }
+  
+  /* Cara */
+  .face {
+    position: absolute;
+    top: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 150px;
+    background: #ffe4c4;
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Cejas */
+  .eyebrows {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .eyebrow {
+    width: 30px;
+    height: 8px;
+    background: black;
+    border-radius: 20px;
+    transform-origin: center center;
+    transition: transform 0.3s ease;
+  }
+  
+  .eyebrow.angry {
+    transform: rotate(30deg);
+  }
+  
+  .eyebrow.right.angry {
+    transform: rotate(-30deg);
+  }
+  
+  /* Ojos */
+  .eyes {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 80px;
+  }
+  
+  .eye {
+    width: 25px;
+    height: 25px;
+    background: black;
+    border-radius: 50%;
+    position: relative;
+    transition: transform 0.3s ease, border-radius 0.3s ease;
+  }
+  
+  .eye::after {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 7px;
+    width: 8px;
+    height: 8px;
+    background: white;
+    border-radius: 50%;
+  }
+  
+  .eye.angry {
+    border-radius: 10px;
+    transform: scale(0.8, 0.5);
+  }
+  
+  /* Boca */
+  .mouth {
+    position: absolute;
+    top: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 25px;
+    background: red;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+  }
+  
+  .mouth.angry {
+    width: 70px;
+    height: 15px;
+    background: darkred;
+    border-radius: 0;
+    transform: translateX(-50%);
+  }
+  
+  /* Vestido */
+  .dress {
+    position: absolute;
+    top: 260px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 180px;
+    height: 220px;
+    background: #e89bbc;
+    border-radius: 50% 50% 0 0;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    z-index: 0;
+  }
+  
+  /* Detalles del vestido */
+  .dress .skirt {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 50px;
+    background: #c864a4;
+    border-radius: 50%;
+  }
+  
+  .dress .flower {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background: pink;
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+  }
+  
+  /* Texto dinámico */
+  .status-text {
+    position: absolute;
+    bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    transition: color 0.5s ease;
+  }
+  
